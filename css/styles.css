@@ -17,35 +17,6 @@ body {
     background-color: turquoise;
 }
 
-a {
-
-    line-height: 1.6;
-}
-
-a:link {
-
-    color: red;
-    text-decoration: none;
-}
-
-a:visited {
-
-    color: green;
-    text-decoration: underline;
-}
-
-a:hover {
-
-    color: purple;
-    text-decoration: underline;
-}
-
-a:active {
-
-    color: maroon;
-    text-decoration: none;
-}
-
 .bodytxt p {
 
     padding-left: 25px;
@@ -94,62 +65,7 @@ img {
     margin-left: 50px;
 }
 
-#links {
-
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
 section {
-
-    padding: 15px;
-}
-
-table, th, td {
-
-    border: 1px solid black;
-    padding: 10px;
-    border-collapse: collapse;
-    text-align: center;
-}
-
-table {
-
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-caption {
-
-    padding-bottom: 15px;
-}
-
-address {
-
-    padding-left: 15px;
-}
-
-.menu h2 {
-
-    padding-left: 15px;
-    font-size: 1.8em;
-    letter-spacing: .4em;
-    font-style: italic;
-}
-
-.menu p {
-
-    font-size: 1.5em;
-}
-
-aside {
-
-    padding: 15px;
-}
-
-article {
 
     padding: 15px;
 }
