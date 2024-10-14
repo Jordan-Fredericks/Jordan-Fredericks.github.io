@@ -63,3 +63,32 @@ setInterval(() => {
     currentImage++
     showImages()
 }, 5000);
+
+//Assignment 6 Code
+
+//Function to render the list when the page is loaded and when a new item is added
+const renderTodos = () => {}
+
+//Watch for a button press, then add the item to the array
+const todoButton = document.querySelector('#todoButton')
+
+todoButton.addEventListener('click', () => {
+
+})
+
+// Get the list from local storage
+const todos = JSON.parse(localStorage.getItem('todo-list')) || []
+
+// Add a new item to the list
+todos.push({ text: input.value, completed: false })
+
+// Save the list to local storage
+localStorage.setItem('todo-list', JSON.stringify(todos))
+
+// Clear the li's before we recreate them
+todoList.innerHTML = ''
+
+// Create and add new list items to the DOM
+const li = document.createElement('li')
+li.textContent = todo.text
+todoList.append(li)
