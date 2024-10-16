@@ -57,6 +57,7 @@ prevButton.addEventListener('click', () => {
 nextButton.addEventListener('click', () => {
     currentImage++
     showImages()
+    console.log('test')
 })
 
 setInterval(() => {
@@ -66,29 +67,38 @@ setInterval(() => {
 
 //Assignment 6 Code
 
-//Function to render the list when the page is loaded and when a new item is added
-const renderTodos = () => {}
-
-//Watch for a button press, then add the item to the array
+// Locate all elements used
 const todoButton = document.querySelector('#todoButton')
-
-todoButton.addEventListener('click', () => {
-
-})
+const newTodo = document.querySelector('#new-todo')
+const todoList = document.querySelector('.todo-list')
 
 // Get the list from local storage
 const todos = JSON.parse(localStorage.getItem('todo-list')) || []
 
-// Add a new item to the list
-todos.push({ text: input.value, completed: false })
+//Function to render the list when the page is loaded and when a new item is added
+const renderTodos = () => {
+    todos.forEach((todo) => {
+        // Create and add new list items to the DOM
+        const li = document.createElement('li')
+        li.textContent = todo.text
+        todoList.append(li)
+    })
+}
 
-// Save the list to local storage
-localStorage.setItem('todo-list', JSON.stringify(todos))
+//Runs when the page first loads
+document.addEventListener('DOMContentLoaded', () => {
+    renderTodos()
+})
 
-// Clear the li's before we recreate them
-todoList.innerHTML = ''
+todoButton.addEventListener('click', () => {
+    // Add a new item to the list
+    todos.push({ text: newTodo.value, completed: false })
 
-// Create and add new list items to the DOM
-const li = document.createElement('li')
-li.textContent = todo.text
-todoList.append(li)
+    // Save the list to local storage
+    localStorage.setItem('todo-list', JSON.stringify(todos))
+
+    // Clear the li's before we recreate them
+    todoList.innerHTML = ''
+
+    renderTodos()
+})
