@@ -57,7 +57,6 @@ prevButton.addEventListener('click', () => {
 nextButton.addEventListener('click', () => {
     currentImage++
     showImages()
-    console.log('test')
 })
 
 setInterval(() => {
