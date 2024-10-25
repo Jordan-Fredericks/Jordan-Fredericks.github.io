@@ -101,3 +101,33 @@ todoButton.addEventListener('click', () => {
 
     renderTodos()
 })
+
+//Assignment 7 Code
+
+const pokeImg = document.querySelector('#pokemon')
+
+const getRandomPokemon = async () => {
+    try {
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 1025))
+        const data = await response.json()
+        const sprite = data.sprites
+        console.log(sprite)
+        return sprite
+    
+    } catch (error) {
+        console.log(error)
+    }
+};
+
+const renderPokemon = (url) => {
+    const img = document.createElement('img')
+    img.src = url
+    img.alt = ' '
+    pokeImg.append(img)
+}
+
+;(async () => {
+    const spriteUrl = await getRandomPokemon()
+
+    renderPokemon(spriteUrl.front_default)
+})()
